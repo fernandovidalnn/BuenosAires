@@ -1,0 +1,22 @@
+# Python/Django
+__pycache__/
+*.pyc
+*.log
+.venv/
+.env
+db.sqlite3
+/media/
+static/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Java
+*.class
+*.jar
+
+# Otros
+.DS_Store
+Thumbs.db
