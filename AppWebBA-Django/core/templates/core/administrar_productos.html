@@ -1,0 +1,88 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link href="{% static 'core/css/forms.css'%}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="centrarTitulo">
+    <h1 class="mb-4 tituloTienda">Administrar Productos</h1>
+    </div>
+
+    {% if form %}
+    <div class="card shadow-sm p-4 mb-4">
+        <form method="POST" enctype="multipart/form-data" id="formulario">
+            {% csrf_token %}
+            <ul class="list-unstyled">
+                {{ form.as_ul }}
+            </ul>
+
+            {% if action == 'upd' %}
+            <script>
+                $(document).ready(function () {
+                    $('#id_patente').attr('readonly', true);
+                });
+            </script>
+            {% endif %}
+
+            <div class="mt-3 d-flex flex-wrap gap-2">
+                <input type="submit" class="btn btn-primary btnwidth" id="id_guardar" value="Guardar">
+                <a class="btn btn-success btnwidth" href="{% url 'administrar_productos' 'ins' -1 %}">Nuevo</a>
+                {% if id != '-1' %}
+                <a class="btn btn-danger btnwidth" href="{% url 'administrar_productos' 'del' id %}">Eliminar</a>
+                {% endif %}
+                <a class="btn btn-info btnwidth" href="{% url 'home' %}">Inicio</a>
+            </div>
+
+            {% if mesg %}
+            <div id="form_message" class="alert alert-danger mt-3" role="alert">{{ mesg }}</div>
+            {% endif %}
+        </form>
+    </div>
+    {% endif %}
+
+    {% if list %}
+    <div class="table-responsive">
+        <table id="tabla_datos" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID Prod</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Imagen</th>
+                    <th class="titulo_boton">Editar</th>
+                    <th class="titulo_boton">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto in list %}
+                <tr>
+                    <td>{{ producto.idprod }}</td>
+                    <td>{{ producto.nomprod }}</td>
+                    <td>{{ producto.descprod }}</td>
+                    <td>${{ producto.precio }}</td>
+                    <td>
+                        <img src="/media/{{ producto.imagen }}" class="mini_auto img-thumbnail" alt="img">
+                    </td>
+                    <td>
+                        <a href="{% url 'administrar_productos' 'upd' producto.idprod %}" class="btn btn-primary btn-sm boton_chico">Editar</a>
+                    </td>
+                    <td>
+                        <a href="{% url 'administrar_productos' 'del' producto.idprod %}" class="btn btn-danger btn-sm boton_chico">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+
+    <div class="text-center mt-4">
+        <a href="http://127.0.0.1:8001/admin" class="btn btn-info btn-sm me-2">Administración</a>
+        <a href="{% url 'home' %}" class="btn btn-info btn-sm">Home page</a>
+    </div>
+</div>
+{% endblock content %}

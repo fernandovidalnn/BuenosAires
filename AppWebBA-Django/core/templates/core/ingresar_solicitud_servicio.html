@@ -1,0 +1,97 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link href="{% static 'core/css/forms.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow p-4">
+        <h2 class="text-center mb-4">Ingresar Nueva Solicitud de Servicio</h2>
+
+        {% if response_code is not None %}
+        <div id="mensaje-pago" class="mb-4">
+            {% if response_code == 0 %}
+            <div class="alert alert-success text-center">
+                ¡El pago fue realizado con éxito!<br>
+                Orden: {{ buy_order }}<br>
+                Cliente: {{ first_name }} {{ last_name }}<br>
+                Monto: ${{ amount }}
+            </div>
+            {% else %}
+            <div class="alert alert-danger text-center">
+                El pago no pudo ser procesado correctamente. Por favor intente nuevamente.
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+
+
+        {% if error %}
+            <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+
+        <form method="POST" action="{% url 'iniciar_pago_servicio' %}">
+            {% csrf_token %}
+
+            <!-- Campo oculto para indicar origen -->
+            <input type="hidden" name="origen" value="solicitud">
+
+            <!-- Precio (visible, pero no editable) -->
+            <div class="mb-3">
+                <label class="form-label">Precio de la Visita</label>
+                <input type="text" class="form-control" value="$25.000" readonly>
+            </div>
+
+            <!-- Tipo de Solicitud como menú desplegable -->
+            <div class="mb-3">
+                <label for="tiposol" class="form-label">Tipo de Solicitud</label>
+                <select class="form-select" name="tiposol" id="tiposol" required>
+                    <option value="" disabled selected>Seleccione...</option>
+                    <option value="Mantención">Mantención</option>
+                    <option value="Reparación">Reparación</option>
+                </select>
+            </div>
+
+            <!-- Descripción -->
+            <div class="mb-3">
+                <label for="descsol" class="form-label">Descripción</label>
+                <textarea class="form-control" name="descsol" id="descsol" rows="4" placeholder="Describa su problema o requerimiento" required></textarea>
+            </div>
+
+            <!-- Fecha de visita desde mañana -->
+            <div class="mb-3">
+                <label for="fechavisita" class="form-label">Fecha de Visita</label>
+                <input type="date" class="form-control" name="fechavisita" id="fechavisita" required>
+            </div>
+
+            <!-- Hora de visita -->
+            <div class="mb-3">
+                <label for="horavisita" class="form-label">Hora de Visita</label>
+                <input type="time" class="form-control" name="horavisita" id="horavisita" required>
+            </div>
+
+            <div class="d-flex justify-content-center mt-4 gap-3">
+                <button type="submit" class="btn btn-primary">Proceder al Pago</button>
+                <button type="reset" class="btn btn-secondary">Limpiar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Script para bloquear fechas antes de mañana -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const fechaInput = document.getElementById("fechavisita");
+        const manana = new Date();
+        manana.setDate(manana.getDate() + 1);
+        const yyyy = manana.getFullYear();
+        const mm = String(manana.getMonth() + 1).padStart(2, '0');
+        const dd = String(manana.getDate()).padStart(2, '0');
+        fechaInput.min = `${yyyy}-${mm}-${dd}`;
+    });
+</script>
+{% endblock %}
+
+

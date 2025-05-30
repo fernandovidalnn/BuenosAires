@@ -1,0 +1,56 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link href="{% static 'core/css/forms.css'%}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="centrarTitulo">
+        <h1 class="tituloTienda center">
+            <span class="aires">Aires Acondicionados</span> 
+            <span class="acondicionados"></span><br>
+            <span class="buenos">Buenos</span> 
+            <span class="aires">Aires</span>
+        </h1>
+    </div>
+
+    {% if list %}
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                {% for producto in list %}
+                    <div class="col-md-3 col-lg-2 col-xl-2 tienda_auto_recuadro ">
+                        {% if producto.disponibilidad == "DISPONIBLE" %}
+                        <a href="{% url 'ficha' producto.idprod %}">
+                        {% endif %}
+                            <div class="card pt-2 h-100 card-borde">
+                                <img src="/media/{{ producto.imagen }}" class="tienda_auto_imagen card-img-top" alt="Imagen del producto">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">{{ producto.nomprod }}</h5>
+                                    <h5 class="card-title">${{ producto.precio }}</h5>
+                                    <p class="card-text">{{ producto.descprod }}</p>
+                                    <p class="card-text mb-1">
+                                        {% if producto.disponibilidad == "DISPONIBLE" %}
+                                            <span class="badge bg-success">Disponible</span>
+                                        {% else %}
+                                            <span class="badge bg-danger">Agotado</span>
+                                        {% endif %}
+                                    </p>
+                                    <small>Cantidad: {{ producto.cantidad }}</small>
+                                </div>
+                            </div>
+                        {% if producto.disponibilidad == "DISPONIBLE" %}
+                        </a>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+    
+    <div class="tienda_link_home text-center mt-4">
+        <a href="{% url 'home' %}" class="btn btn-info btn-sm">Ir a la página de inicio</a>
+    </div>
+{% endblock content %}

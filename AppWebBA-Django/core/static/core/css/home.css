@@ -1,0 +1,77 @@
+.imagen_central {
+    width: 500px;
+}
+
+.tituloTienda {
+    font-size: 2.8em !important;
+    font-weight: 300 !important;
+    text-align: center !important;
+    margin: 50px 0 30px !important;
+    font-family: 'Playfair Display', serif !important;
+    color: #2a3d66 !important;
+    letter-spacing: 1px !important;
+    line-height: 1.3 !important; /* Espacio vertical entre líneas */
+    position: relative !important;
+    display: inline-block !important;
+    transition: all 0.4s ease !important;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.4) !important;
+
+}
+
+
+.tituloTienda::after {
+    content: '' !important;
+    position: absolute !important;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 3px;
+    background: #367eae !important; /* Azul cielo suave */
+    transition: width 0.4s ease !important;
+    border-radius: 2px;
+}
+
+.tituloTienda:hover {
+    color: #1b4f72 !important; /* Azul más intenso */
+    transform: translateY(-3px) scale(1.01) !important;
+    text-shadow: 0 0 10px rgba(124, 188, 231, 0.6) !important; /* Iluminación azul */
+    
+}
+
+.tituloTienda:hover::after {
+    width: 100% !important;
+}
+
+.aires {
+    background: linear-gradient(90deg, #57bdc8, #25aed7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+/* Palabras en blanco */
+.acondicionados,
+.buenos {
+    color: #ffffff !important;
+    font-weight: 700;
+}
+
+.centrarTitulo {
+    text-align: center !important;
+}
+
+/* Opcional: colores personalizados para estados */
+.badge.pendiente {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.badge.finalizado {
+    background-color: #5cb85c;
+    color: white;
+}
+
+.badge.en-proceso {
+    background-color: #5bc0de;
+    color: white;
+}

@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link href="{% static 'core/css/iniciar_sesion.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-8 col-lg-6">
+            <div class="form-card shadow-sm p-4">
+                <h1 class="tituloLogin mb-4">Iniciar Proceso de Pago</h1>
+                <form method="POST" action="{{ url_tbk }}">
+                    {% csrf_token %}
+
+                    <p><strong>Número de Orden de Compra:</strong> {{ buy_order }}</p>
+                    <p><strong>Nombre cliente:</strong> {{ first_name }} {{ last_name }}</p>
+                    <p><strong>RUT:</strong> {{ rut }}</p>
+                    <p><strong>Dirección:</strong> {{ dirusu }}</p>
+                    <p><strong>Correo electrónico:</strong> {{ email }}</p>
+                    <p><strong>Monto a Pagar:</strong> ${{ amount }}</p>
+
+                    <input type="hidden" name="token_ws" value="{{ token_ws }}" />
+
+                    <div class="text-center mt-4">
+                        <input type="submit" class="btn btn-primary px-4" value="Ir a pagar">
+                    </div>
+
+                    {% if mesg %}
+                        <div id="form_message" class="alert alert-danger mt-3" role="alert">{{ mesg }}</div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

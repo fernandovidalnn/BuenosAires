@@ -1,0 +1,82 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link href="{% static 'core/css/forms.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8">
+            <div class="card shadow-lg p-4">
+                <h2 class="text-center fw-bold mb-4">MIS DATOS</h2>
+
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label class="form-label">RUT</label>
+                        <input type="text" name="rut" value="{{ form.rut.value }}" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Nombres</label>
+                        <input type="text" name="first_name" value="{{ form.first_name.value }}" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Apellidos</label>
+                        <input type="text" name="last_name" value="{{ form.last_name.value }}" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Correo</label>
+                        <input type="email" name="email" value="{{ form.email.value }}" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Dirección</label>
+                        <textarea name="dirusu" rows="3" class="form-control" required>{{ form.dirusu.value }}</textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Contraseña</label>
+                        <input type="password" name="password1" class="form-control" placeholder="Nueva contraseña (opcional)">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Repetir contraseña</label>
+                        <input type="password" name="password2" class="form-control" placeholder="Repite la contraseña">
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-4">
+                        <button type="submit" class="btn btn-success px-4">Guardar</button>
+                        <button type="reset" class="btn btn-outline-secondary px-4">Limpiar</button>
+                    </div>
+
+                    {% if mesg %}
+                        <div class="alert alert-info text-center mt-4">{{ mesg }}</div>
+                    {% endif %}
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelector('button[type="reset"]').addEventListener('click', function (e) {
+        e.preventDefault(); // Evita el reset tradicional
+        const form = this.closest('form');
+        form.querySelectorAll('input, textarea').forEach(field => {
+            if (field.type !== 'submit' && field.type !== 'reset') {
+                field.value = '';
+            }
+        });
+    });
+</script>
+
+{% endblock %}
+
+

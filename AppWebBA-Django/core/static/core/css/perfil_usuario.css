@@ -1,0 +1,89 @@
+/* ---------------------------
+   TÍTULO
+---------------------------- */
+.tituloPerfil {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px !important;
+    color: #000000 !important; /* Azul elegante */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+/* ---------------------------
+   CARD DEL FORMULARIO
+---------------------------- */
+.form-card {
+    background-color: #f9f9fc; /* Fondo claro */
+    border-radius: 12px;
+    border: 1px solid #e1e1e1; /* Borde suave */
+    padding: 2rem;
+}
+
+/* ---------------------------
+   FORMULARIO
+---------------------------- */
+form {
+    text-align: left;
+    margin: auto;
+    padding: 0;
+}
+
+/* Etiquetas */
+form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: #333;
+    text-align: left;
+}
+
+/* Cada bloque generado por form.as_p */
+form p {
+    margin: 0 0 12px 0;
+}
+
+/* Inputs */
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+    width: 100%;
+    padding: 8px 12px;
+    margin: 0;
+    border: 1px solid #ecebeb;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+    background-color: white;
+}
+
+form input:focus {
+    border-color: #1a4b91;
+    outline: none;
+}
+
+/* Ayuda de campo */
+.helptext {
+    display: block;
+    font-size: 0.85em;
+    color: #888;
+    margin-top: -8px;
+    margin-bottom: 8px;
+}
+
+/* Botón */
+.btn_guardar {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn_guardar button {
+    font-weight: 600;
+    font-size: 1em;
+    padding: 8px 24px;
+}
+
+/* Mensaje de error */
+#form_message {
+    margin-top: 20px;
+}

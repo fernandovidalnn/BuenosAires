@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link href="{% static 'core/css/iniciar_sesion.css'%}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        {% if response_code == 0 %}
+            <h1 class="text-center tituloLogin mb-4">¡El Pago fue Realizado con Éxito!</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="form-card p-4 text-center shadow-sm">
+                        {% csrf_token %}
+                        <p><strong>Número de Orden de Compra:</strong><br>{{ buy_order }}</p>
+                        <p><strong>Nombre cliente:</strong><br>{{ first_name }} {{ last_name }}</p>
+                        <p><strong>RUT:</strong><br>{{ rut }}</p>
+                        <p><strong>Dirección:</strong><br>{{ dirusu }}</p>
+                        <p><strong>Correo electrónico:</strong><br>{{ email }}</p>
+                        <p><strong>Monto a Pagar:</strong><br>${{ amount }}</p>
+                        <a href="{% url 'tienda' %}" class="btn btn-info mt-3">Ir a la tienda</a>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <h1 class="text-center tituloLogin">¡El Pago no Pudo ser Realizado!<br>
+                <small class="text-danger">Por favor intente nuevamente más tarde...</small>
+            </h1>
+        {% endif %}
+    </div>
+{% endblock content %}

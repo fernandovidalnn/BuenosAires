@@ -1,0 +1,85 @@
+/* Título moderno */
+.tituloRegistro {
+    text-align: center;
+    font-size: 40px !important;  /* ← Esto fuerza el tamaño */
+    font-family: 'Poppins', sans-serif;
+    color: #000000 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+
+/* Contenedor del formulario */
+.form-card {
+    background-color: #f9f9fc;
+    border-radius: 12px;
+    border: 1px solid #d6d6e0;
+}
+
+/* Formulario */
+form {
+    text-align: left;
+}
+
+/* Etiquetas */
+form label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 3px !important;
+    display: block;
+}
+
+/* Inputs */
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+    width: 100%;
+    padding: 5px;
+    margin: 0 !important;  
+    margin-top: 0 !important;  
+    margin-bottom: 5px !important; /* ⬅️ Reducido desde 16px */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Help text más compacto */
+.helptext {
+    display: block;
+    font-size: 0.85em;
+    color: #888;
+    margin-top: -9px;
+    margin-bottom: 5px; /* ⬅️ Reducido */
+}
+
+/* Botón */
+.btn_guardar {
+    text-align: center;
+}
+
+/* Mensaje de error */
+#form_message {
+    margin-top: 20px;
+}
+
+.pegado-arriba {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.container, .container-fluid {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Elimina separación vertical extra de cada campo generado con <p> */
+form p {
+    margin: 0 0 10px 0 !important; /* 🔽 elimina separación arriba, conserva algo abajo */
+    padding: 0;
+}

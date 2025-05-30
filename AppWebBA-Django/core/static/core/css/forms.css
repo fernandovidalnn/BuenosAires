@@ -1,0 +1,208 @@
+/* Encabezado general */
+h1 {
+    text-align: center !important;
+}
+
+/* Formularios */
+#formulario label {
+    width: 150px;
+}
+
+#form_message {
+    margin-top: 20px;
+}
+
+/* Botones */
+.btnwidth {
+    width: 90px;
+}
+
+.titulo_boton {
+    width: 65px;
+}
+
+.boton_chico {
+    font-size: 0.7em;
+    width: 60px;
+}
+
+/* Tablas */
+#tabla_datos {
+    width: 100%;
+    margin: auto;
+    border-collapse: collapse;
+    border: 1px solid gray;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#tabla_datos th, td {
+    border: 1px solid gray;
+    padding: 5px;
+}
+
+#tabla_datos th {
+    background-color: lightgray;
+    color: black;
+}
+
+#tabla_datos tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+/* Imágenes pequeñas */
+.mini_auto {
+    width: 100px;
+}
+
+/* Vista general de productos */
+.tienda_auto_recuadro {
+    text-align: center;
+    padding: 0px;
+    margin: 5px;
+    border: 0px outset #1C6EA4;
+    width: 220px;
+    min-height: 200px;
+}
+
+.tienda_auto_imagen {
+    width: 100%;
+    margin: auto;
+    border: 4px solid green;
+}
+
+.tienda_auto_recuadro_interior {
+    width: 205px;
+    height: 155px;
+    margin: auto;
+}
+
+/* Enlaces y botones generales */
+.tienda_link_home {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Ficha producto */
+.ficha_auto_recuadro {
+    padding: 10px;
+    border: 1px outset #1C6EA4;
+}
+
+.ficha_datos_recuadro {
+    padding: 10px;
+}
+
+/* Card personalizado para productos */
+.card-borde {
+    border: 3px solid #90c7eb;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 100%;
+    min-height: 200px;
+}
+
+.card-borde:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Flex horizontal para ficha: imagen + info */
+.card-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* 🔵 Centramos verticalmente */
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* 🔄 Para dispositivos pequeños */
+    padding: 1rem;
+}
+
+/* Imagen de ficha */
+.imagen-contenedor {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 1rem;
+    overflow: hidden; /* 🔒 evita que la imagen se desborde al hacer zoom */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imagenFicha {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.4s ease; /* ⚡ suaviza el efecto */
+    cursor: zoom-in; /* ícono de lupa */
+}
+
+.imagenFicha:hover {
+    transform: scale(1.2); /* 🔍 Zoom al 120% */
+}
+
+
+/* Contenido textual en ficha */
+.producto-info {
+    flex: 1 1 45%;
+    min-width: 300px;
+}
+
+/* Estilo del título principal */
+.tituloTienda {
+    font-size: 2.8em !important;
+    font-weight: 300 !important;
+    text-align: center !important;
+    margin: 50px 0 30px !important;
+    font-family: 'Playfair Display', serif !important;
+    color: #2a3d66 !important;
+    letter-spacing: 1px !important;
+    line-height: 1.3 !important;
+    position: relative !important;
+    display: inline-block !important;
+    transition: all 0.4s ease !important;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.4) !important;
+}
+
+.tituloTienda::after {
+    content: '' !important;
+    position: absolute !important;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 3px;
+    background: #367eae !important;
+    transition: width 0.4s ease !important;
+    border-radius: 2px;
+}
+
+.tituloTienda:hover {
+    color: #1b4f72 !important;
+    transform: translateY(-3px) scale(1.01) !important;
+    text-shadow: 0 0 10px rgba(124, 188, 231, 0.6) !important;
+}
+
+.tituloTienda:hover::after {
+    width: 100% !important;
+}
+
+/* Efectos de color en palabras clave */
+.aires {
+    background: linear-gradient(90deg, #57bdc8, #25aed7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.acondicionados,
+.buenos {
+    color: #ffffff !important;
+    font-weight: 700;
+}
+
+/* Centrado de título */
+.centrarTitulo {
+    text-align: center !important;
+}

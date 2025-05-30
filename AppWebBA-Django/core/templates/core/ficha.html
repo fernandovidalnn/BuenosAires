@@ -1,0 +1,84 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link href="{% static 'core/css/forms.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-lg p-4">
+        <div class="card-flex">
+            <!-- Imagen del producto -->
+            <div class="imagen-contenedor text-center">
+                <img src="/media/{{ producto.imagen }}" class="imagenFicha" alt="Imagen del producto">
+            </div>
+
+            <!-- Detalles del producto -->
+            <div class="producto-info">
+                <h2 class="fw-semibold">Producto: {{ producto.nomprod }}</h2>
+                <p><strong>ID:</strong> {{ producto.idprod }}</p>
+                <p><strong>Descripción:</strong> {{ producto.descprod }}</p>
+                <p><strong>Precio CLP:</strong><br>${{ producto.precio }}</p>
+
+                <p>
+                    <p><strong>Precio USD:</strong><br>
+                        <span class="precio-dolar">
+                        ${{ precio_usd }}
+                        </span>
+                    </p>
+                </p>
+
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="submit" class="btn btn-primary" value="Comprar">
+                    {% if mesg %}
+                        <div id="form_message" class="alert alert-danger mt-3" role="alert">{{ mesg }}</div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botones de navegación -->
+    <div class="text-center mt-4">
+        <a href="{% url 'tienda' %}" class="btn btn-info btn-sm">Ir a la tienda</a>&nbsp;&nbsp;&nbsp;
+        <a href="{% url 'home' %}" class="btn btn-info btn-sm">Ir a la página de inicio</a>
+    </div>
+
+    <!-- Mensajes de pago -->
+    {% if response_code is not None %}
+        <div id="mensaje-pago" class="container mt-5">
+            {% if response_code == 0 %}
+                <h2 class="text-center text-success">¡El Pago fue Realizado con Éxito!</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6">
+                        <div class="form-card p-4 text-center shadow-sm border border-success">
+                            <p><strong>Número de Orden de Compra:</strong><br>{{ buy_order }}</p>
+                            <p><strong>Nombre cliente:</strong><br>{{ first_name }} {{ last_name }}</p>
+                            <p><strong>RUT:</strong><br>{{ rut }}</p>
+                            <p><strong>Dirección:</strong><br>{{ dirusu }}</p>
+                            <p><strong>Correo electrónico:</strong><br>{{ email }}</p>
+                            <p><strong>Monto a Pagar:</strong><br>${{ amount }}</p>
+                            <a href="{% url 'tienda' %}" class="btn btn-info mt-3">Ir a la tienda</a>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <h2 class="text-center text-danger">¡El Pago no Pudo ser Realizado!</h2>
+                <p class="text-center">Por favor intente nuevamente más tarde...</p>
+            {% endif %}
+        </div>
+    {% endif %}
+</div>
+
+<!-- Script para hacer scroll automático si hay mensaje de pago -->
+<script>
+    window.addEventListener("load", function () {
+        const mensajePago = document.getElementById("mensaje-pago");
+        if (mensajePago) {
+            mensajePago.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+</script>
+{% endblock content %}

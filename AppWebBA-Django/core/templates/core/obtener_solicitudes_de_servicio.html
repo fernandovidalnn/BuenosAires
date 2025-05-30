@@ -1,0 +1,138 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link href="{% static 'core/css/home.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+
+    <!-- Título -->
+    <div class="text-center mb-4">
+        <h1 class="tituloTienda">
+            Mis Solicitudes de Servicio<br>
+            {% comment %} <span style="font-size: 0.5em; font-weight: normal;">(Vista de {{ tipousu }})</span> {% endcomment %}
+        </h1>
+    </div>
+
+    <!-- Tabla de solicitudes -->
+    <div class="card shadow-sm p-4">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover align-middle text-center">
+                <thead class="table-light">
+                    <tr>
+                        <th>Nro SS</th>
+                        <th>Cliente</th>
+                        <th>Tipo SS</th>
+                        <th>Fecha Visita</th>
+                        <th>Hora</th>
+                        <th>Técnico</th>
+                        <th>Descripción</th>
+                        <th>Estado</th>
+                        {% if es_tecnico %}
+                            <th>Opciones</th>
+                        {% endif %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if lista %}
+                        {% for sol in lista %}
+                        <tr>
+                            <td>{{ sol.nrosol }}</td>
+                            <td>{{ sol.nrofac.rutcli.user.get_full_name }}</td>
+                            <td>{{ sol.tiposol }}</td>
+                            <td>{{ sol.fechavisita }}</td>
+                            <td>
+                                {% if sol.hora %}
+                                {{ sol.hora|time:"H:i" }}
+                                {% else %}
+                                00:00
+                                {% endif %}</td>
+                            <td>{{ sol.ruttec.user.get_full_name }}</td>
+                            <td class="text-start">{{ sol.descsol }}</td>
+                            <td>
+                                <span class="badge bg-secondary">{{ sol.estadosol }}</span>
+                            </td>
+
+                            {% if es_tecnico or user.is_superuser %}
+                            <td>
+                                <a href="{% url 'estado_solicitud' sol.nrosol 'aceptar' %}" class="btn btn-sm btn-primary">Aceptar</a>
+                                <a href="#" class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#modalModificar{{ sol.nrosol }}">Modificar</a>
+                                <a href="{% url 'estado_solicitud' sol.nrosol 'cerrar' %}" class="btn btn-sm btn-danger">Cerrar</a>
+                            </td>
+                            {% endif %}
+                        </tr>
+
+                        {% if es_tecnico or user.is_superuser %}
+                        <!-- Modal de modificación -->
+                        <div class="modal fade" id="modalModificar{{ sol.nrosol }}" tabindex="-1" aria-labelledby="modalLabel{{ sol.nrosol }}" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <form method="POST" action="{% url 'modificar_solicitud' sol.nrosol %}">
+                                        {% csrf_token %}
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modalLabel{{ sol.nrosol }}">Modificar Fecha y Hora</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="mb-3">
+                                                <label for="fechavisita{{ sol.nrosol }}" class="form-label">Nueva Fecha</label>
+                                                <input type="date" class="form-control" name="fechavisita" id="fechavisita{{ sol.nrosol }}" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="horavisita{{ sol.nrosol }}" class="form-label">Nueva Hora</label>
+                                                <input type="time" class="form-control" name="horavisita" id="horavisita{{ sol.nrosol }}" required>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        <tr><td colspan="9">No hay solicitudes registradas.</td></tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Botón para clientes -->
+    {% if tipousu == "Cliente" %}
+    <div class="text-center mt-4">
+        <a href="{% url 'crear_solicitud' %}" class="btn btn-primary">
+            Ingresar una nueva solicitud de servicio
+        </a>
+    </div>
+    {% endif %}
+
+</div>
+
+<!-- Scroll automático y restricción de fechas pasadas -->
+<script>
+    window.addEventListener("load", function () {
+        const mensajePago = document.getElementById("mensaje-pago");
+        if (mensajePago) {
+            mensajePago.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Bloquear fechas anteriores a hoy en todos los inputs tipo date
+        const hoy = new Date();
+        const yyyy = hoy.getFullYear();
+        const mm = String(hoy.getMonth() + 1).padStart(2, '0');
+        const dd = String(hoy.getDate()).padStart(2, '0');
+        const fechaMin = `${yyyy}-${mm}-${dd}`;
+
+        document.querySelectorAll("input[type='date']").forEach(input => {
+            input.min = fechaMin;
+        });
+    });
+</script>
+{% endblock %}
+

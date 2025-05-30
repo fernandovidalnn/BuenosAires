@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link href="{% static 'core/css/home.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+    <div class="centrarTitulo">
+        <h1 class="tituloTienda center">
+            <span class="aires">Aires Acondicionados</span> 
+            <span class="acondicionados"></span><br>
+            <span class="buenos">Buenos</span> 
+            <span class="aires">Aires</span>
+        </h1>
+    </div>
+    <div class="text-center">
+        
+        <img class="imagen_central" src="{% static 'core/img/home.jpg'%}" alt="">
+    </div>
+{% endblock content %}
