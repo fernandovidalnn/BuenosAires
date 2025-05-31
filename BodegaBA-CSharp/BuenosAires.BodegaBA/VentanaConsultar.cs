@@ -18,16 +18,18 @@ namespace BuenosAires.BodegaBA
         public VentanaConsultar(string cuenta)
         {
             InitializeComponent();
-            this.Text = $"Administrar productos - Usuario: {cuenta}";
+            this.Text = $"Productos disponibles - Usuario: {cuenta}";
             btnVolver.Click += (sender, e) => Volver(cuenta);
             this.CentrarVentana();
-            grid.ConfigurarDataGridView(
-                 "idprod:ID, "
-               + "nomprod:Nombre, "
-               + "descprod:Descripción, "
-               + "precio:Precio, "
-               + "imagen:Imagen"
-           );
+
+            // Cargar productos desde el servicio
+            var sc = new ScStockProducto();
+            sc.StockProducto();
+            grid.DataSource = sc.ListaProductos;
+
+            grid.Columns["IdProd"].HeaderText = "ID Producto";
+            grid.Columns["NomProd"].HeaderText = "Nombre";
+            grid.Columns["Estado"].HeaderText = "Estado";
         }
 
         private void Volver(string cuenta)

@@ -26,7 +26,7 @@ namespace BuenosAires.BodegaBA
 
         private void EnviarProducto(string cuenta)
         {
-            VentanaProducto ventana = new VentanaProducto(cuenta);
+            VentanaConsultar ventana = new VentanaConsultar(cuenta);
             ventana.ShowDialog();
             this.Hide();
         }

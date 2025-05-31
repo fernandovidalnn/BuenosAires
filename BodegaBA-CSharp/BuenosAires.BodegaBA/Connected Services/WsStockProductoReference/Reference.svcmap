@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="04ba681b-275e-4e88-94b8-3b6dfd4f5824" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54096/WsStockProducto.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WsStockProducto.wsdl" MetadataType="Wsdl" ID="70e2adcb-f7ee-48dd-a4e4-883e0f5305b1" SourceId="1" SourceUrl="http://localhost:54096/WsStockProducto.svc?wsdl" />
+    <MetadataFile FileName="WsStockProducto.disco" MetadataType="Disco" ID="536e5aa6-0dc4-49f5-9a9d-729cb89eb9da" SourceId="1" SourceUrl="http://localhost:54096/WsStockProducto.svc?disco" />
+    <MetadataFile FileName="WsStockProducto.xsd" MetadataType="Schema" ID="a0f1c6d3-65f4-4ade-86f9-86bde45a409a" SourceId="1" SourceUrl="http://localhost:54096/WsStockProducto.svc?xsd=xsd0" />
+    <MetadataFile FileName="WsStockProducto1.xsd" MetadataType="Schema" ID="3ba5c2ff-8de9-4447-ba25-ebc895f97259" SourceId="1" SourceUrl="http://localhost:54096/WsStockProducto.svc?xsd=xsd1" />
+    <MetadataFile FileName="WsStockProducto2.xsd" MetadataType="Schema" ID="50f6075e-8eee-4e5a-8001-c77d5d61becf" SourceId="1" SourceUrl="http://localhost:54096/WsStockProducto.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

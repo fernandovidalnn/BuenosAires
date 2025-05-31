@@ -7,11 +7,13 @@ BEGIN
 	SET NOCOUNT ON;
 
     SELECT
-		s.idstock, p.idprod, p.nomprod, f.nrofac, 
+        p.idprod, 
+        p.nomprod, 
+        f.nrofac, 
 		CASE 
 			WHEN f.nrofac IS NOT NULL 
-			THEN 'Vendido'
-			ELSE 'En bodega'
+			THEN 'Disponible'
+			ELSE 'Agotado'
 		END AS 'estado'
 	FROM 
 		StockProducto s 

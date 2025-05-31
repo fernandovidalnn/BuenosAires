@@ -19,3 +19,12 @@ def autenticar(request, tipousu, username, password):
     else:
         nombre, tipo, msg = '', '', 'La cuenta o la contraseña no coinciden con un usuario válido'
     return JsonResponse({'Autenticado': False, 'NombreUsuario': nombre, 'TipoUsuario': tipo, 'Mensaje': msg})
+
+def obtener_equipos_en_bodega(request):  # ← Agrega "request"
+    with connection.cursor() as cursor:
+        cursor.execute("EXEC SP_OBTENER_EQUIPOS_EN_BODEGA")
+        rows = cursor.fetchall()
+        columns = [col[0] for col in cursor.description]
+        data = [dict(zip(columns, row)) for row in rows]
+
+    return JsonResponse(data, safe=False)

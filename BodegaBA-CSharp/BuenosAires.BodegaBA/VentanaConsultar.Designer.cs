@@ -69,12 +69,12 @@
             this.grid.AllowUserToAddRows = false;
             this.grid.AllowUserToDeleteRows = false;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid.Location = new System.Drawing.Point(12, 170);
+            this.grid.Location = new System.Drawing.Point(130, 196);
             this.grid.Name = "grid";
             this.grid.ReadOnly = true;
             this.grid.RowHeadersWidth = 51;
             this.grid.RowTemplate.Height = 24;
-            this.grid.Size = new System.Drawing.Size(977, 419);
+            this.grid.Size = new System.Drawing.Size(739, 359);
             this.grid.TabIndex = 3;
             // 
             // VentanaConsultar
