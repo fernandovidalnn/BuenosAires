@@ -14,10 +14,10 @@ namespace BuenosAires.ServiceProxy
     {
         public class ProductoDisponible
         {
-            public int IdStock { get; set; }
+
             public int IdProd { get; set; }
             public string NomProd { get; set; }
-            public int? NroFac { get; set; }
+            public int Cantidad { get; set; }
             public string Estado { get; set; }
         }
         public class RespuestaStockProducto

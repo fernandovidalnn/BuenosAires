@@ -23,7 +23,7 @@ namespace BuenosAires.ServiceLayer
             resp.JsonListaProducto = "";
 
 
-            string apiUrl = "http://127.0.0.1:8000/BuenosAiresApiRest/obtener_equipos_en_bodega";
+            string apiUrl = "http://127.0.0.1:8001/BuenosAiresApiRest/obtener_equipos_en_bodega";
 
             try {
                 using (HttpClient client = new HttpClient()) {

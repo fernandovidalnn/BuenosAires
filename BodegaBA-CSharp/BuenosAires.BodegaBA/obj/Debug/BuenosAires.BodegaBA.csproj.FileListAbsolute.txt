@@ -12,7 +12,6 @@ C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BodegaBA\obj\Debug\BuenosAires.Bodega
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BodegaBA\obj\Debug\BuenosAires.BodegaBA.Properties.Resources.resources
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BodegaBA\obj\Debug\BuenosAires.BodegaBA.csproj.GenerateResource.cache
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BodegaBA\obj\Debug\BuenosAires.BodegaBA.csproj.CoreCompileInputs.cache
-C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BodegaBA\obj\Debug\BuenosAi.DA76D1E8.Up2Date
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BodegaBA\obj\Debug\BuenosAires.BodegaBA.exe
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BodegaBA\obj\Debug\BuenosAires.BodegaBA.pdb
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BodegaBA\obj\Debug\BuenosAires.BodegaBA.VentanaPrincipal.resources
@@ -20,3 +19,4 @@ C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BodegaBA\bin\Debug\VentanaLogin.resx
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BodegaBA\bin\Debug\VentanaLogin.cs
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BodegaBA\bin\Debug\VentanaLogin.designer.cs
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BodegaBA\obj\Debug\BuenosAires.BodegaBA.VentanaConsultar.resources
+C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BodegaBA\obj\Debug\BuenosAi.DA76D1E8.Up2Date

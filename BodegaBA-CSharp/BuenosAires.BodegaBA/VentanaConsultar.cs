@@ -29,6 +29,7 @@ namespace BuenosAires.BodegaBA
 
             grid.Columns["IdProd"].HeaderText = "ID Producto";
             grid.Columns["NomProd"].HeaderText = "Nombre";
+            grid.Columns["Cantidad"].HeaderText = "Cantidad";  // ✅ NUEVA COLUMNA
             grid.Columns["Estado"].HeaderText = "Estado";
         }
 

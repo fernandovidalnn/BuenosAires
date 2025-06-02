@@ -27,6 +27,6 @@ C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BusinessLayer\bin\Debug\EntityFramewo
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BusinessLayer\obj\Debug\BuenosAires.BusinessLayer.csproj.AssemblyReference.cache
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BusinessLayer\obj\Debug\BuenosAires.BusinessLayer.csproj.CoreCompileInputs.cache
-C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BusinessLayer\obj\Debug\BuenosAi.D8D1B1E4.Up2Date
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BusinessLayer\obj\Debug\BuenosAires.BusinessLayer.dll
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BusinessLayer\obj\Debug\BuenosAires.BusinessLayer.pdb
+C:\BuenosAires\BodegaBA-CSharp\BuenosAires.BusinessLayer\obj\Debug\BuenosAires.BusinessLayer.csproj.CopyComplete

@@ -23,6 +23,6 @@ C:\BuenosAires\BodegaBA-CSharp\BuenosAires.DataLayer\bin\Debug\EntityFramework.x
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.DataLayer\bin\Debug\EntityFramework.SqlServer.xml
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.DataLayer\obj\Debug\BuenosAires.DataLayer.csproj.AssemblyReference.cache
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.DataLayer\obj\Debug\BuenosAires.DataLayer.csproj.CoreCompileInputs.cache
-C:\BuenosAires\BodegaBA-CSharp\BuenosAires.DataLayer\obj\Debug\BuenosAi.A5F21D2D.Up2Date
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.DataLayer\obj\Debug\BuenosAires.DataLayer.dll
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.DataLayer\obj\Debug\BuenosAires.DataLayer.pdb
+C:\BuenosAires\BodegaBA-CSharp\BuenosAires.DataLayer\obj\Debug\BuenosAires.DataLayer.csproj.CopyComplete

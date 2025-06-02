@@ -17,6 +17,6 @@ C:\BuenosAires\BodegaBA-CSharp\BuenosAires.Model\bin\Debug\EntityFramework.xml
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.Model\bin\Debug\EntityFramework.SqlServer.xml
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.Model\obj\Debug\BuenosAires.Model.csproj.AssemblyReference.cache
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.Model\obj\Debug\BuenosAires.Model.csproj.CoreCompileInputs.cache
-C:\BuenosAires\BodegaBA-CSharp\BuenosAires.Model\obj\Debug\BuenosAi.DD85F527.Up2Date
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.Model\obj\Debug\BuenosAires.Model.dll
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.Model\obj\Debug\BuenosAires.Model.pdb
+C:\BuenosAires\BodegaBA-CSharp\BuenosAires.Model\obj\Debug\BuenosAires.Model.csproj.CopyComplete

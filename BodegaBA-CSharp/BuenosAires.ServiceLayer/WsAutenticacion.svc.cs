@@ -18,7 +18,7 @@ namespace BuenosAires.ServiceLayer
             if (username.Trim() == "") username = "no-fue-digitado-el-username";
             if (password.Trim() == "") password = "no-fue-digitada-la-password";
 
-            string apiUrl = "http://127.0.0.1:8000/BuenosAiresApiRest/autenticar/" + tipousu + "/" + username + "/" + password;
+            string apiUrl = "http://127.0.0.1:8001/BuenosAiresApiRest/autenticar/" + tipousu + "/" + username + "/" + password;
 
             try
             {

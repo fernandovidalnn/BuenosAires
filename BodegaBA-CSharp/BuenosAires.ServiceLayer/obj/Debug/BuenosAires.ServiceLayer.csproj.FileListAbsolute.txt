@@ -14,6 +14,6 @@ C:\BuenosAires\BodegaBA-CSharp\BuenosAires.ServiceLayer\bin\BuenosAires.DataLaye
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.ServiceLayer\bin\BuenosAires.DataLayer.dll.config
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.ServiceLayer\obj\Debug\BuenosAires.ServiceLayer.csproj.AssemblyReference.cache
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.ServiceLayer\obj\Debug\BuenosAires.ServiceLayer.csproj.CoreCompileInputs.cache
-C:\BuenosAires\BodegaBA-CSharp\BuenosAires.ServiceLayer\obj\Debug\BuenosAi.C775F586.Up2Date
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.ServiceLayer\obj\Debug\BuenosAires.ServiceLayer.dll
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.ServiceLayer\obj\Debug\BuenosAires.ServiceLayer.pdb
+C:\BuenosAires\BodegaBA-CSharp\BuenosAires.ServiceLayer\obj\Debug\BuenosAires.ServiceLayer.csproj.CopyComplete
