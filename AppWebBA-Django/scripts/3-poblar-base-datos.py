@@ -1,24 +1,26 @@
 from django.db import connection
 
 SP_OBTENER_EQUIPOS_EN_BODEGA = """
-CREATE PROCEDURE [dbo].[SP_OBTENER_EQUIPOS_EN_BODEGA]
+CREATE OR ALTER PROCEDURE [dbo].[SP_OBTENER_EQUIPOS_EN_BODEGA]
 AS
 BEGIN
-	SET NOCOUNT ON;
+    SET NOCOUNT ON;
 
     SELECT
-        p.idprod, 
-        p.nomprod, 
-        f.nrofac, 
-		CASE 
-			WHEN f.nrofac IS NOT NULL 
-			THEN 'Disponible'
-			ELSE 'Agotado'
-		END AS 'estado'
-	FROM 
-		StockProducto s 
-		INNER JOIN Producto p ON s.idprod = p.idprod
-		LEFT OUTER JOIN Factura  f ON s.nrofac = f.nrofac
+        p.idprod,
+        p.nomprod,
+        ISNULL(COUNT(s.idstock), 0) AS cantidad,
+        CASE 
+            WHEN COUNT(s.idstock) > 0 THEN 'Disponible'
+            ELSE 'Agotado'
+        END AS estado
+    FROM 
+        Producto p
+        LEFT JOIN StockProducto s ON p.idprod = s.idprod AND s.nrofac IS NULL
+    WHERE
+        p.idprod < 9999
+    GROUP BY 
+        p.idprod, p.nomprod
 END
 """
 

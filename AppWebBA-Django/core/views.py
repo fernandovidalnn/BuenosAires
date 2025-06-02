@@ -86,32 +86,29 @@ def tienda(request):
         cursor.execute("EXEC dbo.SP_OBTENER_EQUIPOS_EN_BODEGA")
         productos = cursor.fetchall()
 
-    print("Resultados SP:", productos)
-
     for row in productos:
-        idprod = row[1]  # ID del producto
+        idprod = row[0]
+        nomprod = row[1]
+        cantidad = int(row[2])  # viene desde COUNT(*) en el SP
 
         try:
             producto = Producto.objects.get(idprod=idprod)
-
-            cantidad = 0 if row[3] is None else int(row[3])
             disponibilidad = 'DISPONIBLE' if cantidad > 0 else 'AGOTADO'
 
             listaproductos.append({
                 'idprod': idprod,
-                'nomprod': row[2],  # nombre desde SP
-                'descprod': producto.descprod,  # desde modelo
-                'precio': producto.precio,      # desde modelo
+                'nomprod': nomprod,
+                'descprod': producto.descprod,
+                'precio': producto.precio,
                 'imagen': producto.imagen.name if producto.imagen else 'default.png',
                 'cantidad': cantidad,
                 'disponibilidad': disponibilidad,
             })
-
         except Producto.DoesNotExist:
-            # Si el producto no existe en la tabla Producto, lo ignoramos
             continue
 
     return render(request, "core/tienda.html", {"list": listaproductos})
+
 
 
 # https://www.transbankdevelopers.cl/documentacion/como_empezar#como-empezar
