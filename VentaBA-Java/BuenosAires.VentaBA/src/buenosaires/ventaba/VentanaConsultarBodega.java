@@ -4,6 +4,8 @@
  */
 package buenosaires.ventaba;
 
+import buenosaires.proxy.wsstockproducto.ScStockProducto;
+
 /**
  *
  * @author Matias
@@ -109,7 +111,8 @@ public class VentanaConsultarBodega extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
-        
+        ScStockProducto client = new ScStockProducto();
+        client.getProductos();
     }//GEN-LAST:event_botonSalirActionPerformed
 
     /**

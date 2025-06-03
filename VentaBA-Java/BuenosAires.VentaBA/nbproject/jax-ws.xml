@@ -38,5 +38,41 @@
         </wsimport-option>
       </wsimport-options>
     </client>
+    <client name="WsStockProducto">
+      <wsdl-url>http://localhost:54096/WsStockProducto.svc?singleWsdl</wsdl-url>
+      <local-wsdl-file>localhost_54096/WsStockProducto.svc.singlewsdl.wsdl</local-wsdl-file>
+      <package-name forceReplace="true">buenosaires.proxy.wsstockproducto</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://localhost:54096/WsStockProducto.svc?singleWsdl</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>package</wsimport-option-name>
+          <wsimport-option-value>buenosaires.proxy.wsstockproducto</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
   </clients>
 </jax-ws>

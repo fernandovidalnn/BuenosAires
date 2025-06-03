@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://localhost:54096/WsAutenticacion.svc?singleWsdl" uri="xml-resources/web-service-references/WsAutenticacion/wsdl/localhost_54096/WsAutenticacion.svc.singlewsdl.wsdl"/>
+    <system systemId="http://localhost:54096/WsStockProducto.svc?singleWsdl" uri="xml-resources/web-service-references/WsStockProducto/wsdl/localhost_54096/WsStockProducto.svc.singlewsdl.wsdl"/>
 </catalog>
