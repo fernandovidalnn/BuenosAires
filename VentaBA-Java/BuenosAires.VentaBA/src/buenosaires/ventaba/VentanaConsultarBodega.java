@@ -5,6 +5,8 @@
 package buenosaires.ventaba;
 
 import buenosaires.proxy.wsstockproducto.ScStockProducto;
+import buenosaires.ventaba.VentanaLogin;
+
 
 /**
  *
@@ -17,8 +19,29 @@ public class VentanaConsultarBodega extends javax.swing.JFrame {
     /**
      * Creates new form VentanaConsultarBodega
      */
+    private void cargarTablaProductos() {
+    ScStockProducto cliente = new ScStockProducto();
+    java.util.List<buenosaires.proxy.wsstockproducto.FilaStockProducto> productos = cliente.getProductos();
+
+    javax.swing.table.DefaultTableModel modelo = (javax.swing.table.DefaultTableModel) tabla.getModel();
+    modelo.setRowCount(0); // Limpia la tabla
+
+    for (var p : productos) {
+        Object[] fila = new Object[] {
+            p.IdProd,
+            p.NomProd,
+            p.NroFac, // solo si agregaste el campo Cantidad
+            p.Estado
+        };
+        modelo.addRow(fila);
+    }
+}
+
     public VentanaConsultarBodega() {
         initComponents();
+        cargarTablaProductos();
+        setLocationRelativeTo(null);
+
     }
 
     /**
@@ -111,8 +134,8 @@ public class VentanaConsultarBodega extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
-        ScStockProducto client = new ScStockProducto();
-        client.getProductos();
+       new VentanaLogin().setVisible(true); // Mostrar ventana de login
+       this.dispose(); // Cerrar la ventana actual
     }//GEN-LAST:event_botonSalirActionPerformed
 
     /**

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import buenosaires.proxy.wsstockproducto.XmlSerializer;
 import org.json.simple.JSONObject;
+import org.json.simple.JSONArray;
 
 public class ScStockProducto {
     
@@ -16,13 +17,28 @@ public class ScStockProducto {
     }
     
      // Getter
-    public List<StockProducto> getProductos() {
+    public List<FilaStockProducto> getProductos() {
         WsStockProducto ws = new WsStockProducto();
         var port = ws.getBasicHttpBindingIWsStockProducto();
         Respuesta resp = port.stockProducto();
-        Object jsonObject = JSONValue.parse(resp.jsonListaProducto.getValue());
-        JSONObject lista = (JSONObject)jsonObject;
-        /*
+        JSONArray arreglo = (JSONArray) JSONValue.parse(resp.jsonListaProducto.getValue());
+        
+        List<FilaStockProducto> productos = new ArrayList<>();
+        for (Object obj : arreglo) {
+            JSONObject item = (JSONObject) obj;
+
+            FilaStockProducto producto = new FilaStockProducto();
+            producto.IdProd = ((Long) item.get("idprod")).intValue();
+            producto.NomProd = (String) item.get("nomprod");
+            producto.NroFac = ((Long) item.get("cantidad")).intValue();
+            producto.Estado = (String) item.get("estado");
+            
+            // Solo si decides agregar cantidad y usarla en la clase
+            // producto.Cantidad = ((Long) item.get("cantidad")).intValue(); 
+
+            productos.add(producto);
+        }
+        /*JSONObject lista = (JSONObject)jsonObject;
         lista.get(jsonObject)
                   
         grid.Columns["IdProd"].HeaderText = "ID Producto";
@@ -33,7 +49,7 @@ public class ScStockProducto {
         XmlSerializer.deserialize(resp.jsonListaProducto, clazz)
         
         */
-        return null;
+        return productos;
     }
 
     /*

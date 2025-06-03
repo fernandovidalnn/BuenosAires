@@ -19,4 +19,4 @@ C:\BuenosAires\BodegaBA-CSharp\BuenosAires.Model\obj\Debug\BuenosAires.Model.csp
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.Model\obj\Debug\BuenosAires.Model.csproj.CoreCompileInputs.cache
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.Model\obj\Debug\BuenosAires.Model.dll
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.Model\obj\Debug\BuenosAires.Model.pdb
-C:\BuenosAires\BodegaBA-CSharp\BuenosAires.Model\obj\Debug\BuenosAires.Model.csproj.CopyComplete
+C:\BuenosAires\BodegaBA-CSharp\BuenosAires.Model\obj\Debug\BuenosAi.DD85F527.Up2Date

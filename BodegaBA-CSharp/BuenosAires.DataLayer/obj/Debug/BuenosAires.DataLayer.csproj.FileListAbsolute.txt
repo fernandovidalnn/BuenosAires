@@ -25,4 +25,4 @@ C:\BuenosAires\BodegaBA-CSharp\BuenosAires.DataLayer\obj\Debug\BuenosAires.DataL
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.DataLayer\obj\Debug\BuenosAires.DataLayer.csproj.CoreCompileInputs.cache
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.DataLayer\obj\Debug\BuenosAires.DataLayer.dll
 C:\BuenosAires\BodegaBA-CSharp\BuenosAires.DataLayer\obj\Debug\BuenosAires.DataLayer.pdb
-C:\BuenosAires\BodegaBA-CSharp\BuenosAires.DataLayer\obj\Debug\BuenosAires.DataLayer.csproj.CopyComplete
+C:\BuenosAires\BodegaBA-CSharp\BuenosAires.DataLayer\obj\Debug\BuenosAi.A5F21D2D.Up2Date

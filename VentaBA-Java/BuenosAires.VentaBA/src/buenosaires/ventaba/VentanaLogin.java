@@ -7,6 +7,8 @@ public class VentanaLogin extends javax.swing.JFrame {
 
     public VentanaLogin() {
         initComponents();
+        getRootPane().setDefaultButton(btnIngresar); // ✅ Habilita ENTER como acción del botón
+        setLocationRelativeTo(null); // ✅ Centrar en pantalla al abrir
     }
 
     /**
@@ -103,10 +105,10 @@ public class VentanaLogin extends javax.swing.JFrame {
         var bc = new ScAutenticacion();
         bc.autenticar("Vendedor", txtCuenta.getText(), txtPassword.getText());
         if (bc.isAutenticado()) {
-            JOptionPane.showMessageDialog(null, "AUTENTICADO"
-                , "Buenos Aires", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "AUTENTICADO", "Buenos Aires", JOptionPane.INFORMATION_MESSAGE);
             VentanaConsultarBodega ventana = new VentanaConsultarBodega();
             ventana.setVisible(true);
+            this.dispose(); // ✅ Cierra esta ventana (VentanaLogin)
         }
         else {
             JOptionPane.showMessageDialog(null, bc.getMensaje()
