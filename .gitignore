@@ -1,22 +1,10 @@
-# Python/Django
-__pycache__/
-*.pyc
-*.log
-.venv/
-.env
-db.sqlite3
-/media/
-static/
-
-# Visual Studio
-.vs/
-*.user
-*.suo
-
-# Java
+*.exe
+*.dll
+*.pdb
 *.class
-*.jar
-
-# Otros
-.DS_Store
-Thumbs.db
+bin/
+obj/
+build/
+dist/
+.vs/
+nbproject/private/
