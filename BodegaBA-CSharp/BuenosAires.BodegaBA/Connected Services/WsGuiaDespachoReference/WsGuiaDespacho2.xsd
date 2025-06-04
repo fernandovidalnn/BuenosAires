@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:54096/WsGuiaDespacho.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BuenosAires.Model" />
+  <xs:element name="GuiaDespacho">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuiaDespachoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BuenosAires.Model" minOccurs="0" name="GuiaDespachoResult" nillable="true" type="q1:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarEstadoGuiaDespacho">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nroGD" type="xs:int" />
+        <xs:element minOccurs="0" name="estadoGD" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarEstadoGuiaDespachoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BuenosAires.Model" minOccurs="0" name="ActualizarEstadoGuiaDespachoResult" nillable="true" type="q2:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="23f88071-23e0-462f-9557-7947840f70af" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54096/WsGuiaDespacho.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WsGuiaDespacho.xsd" MetadataType="Schema" ID="63320f0e-a336-4f9c-86f1-54a25bf04a09" SourceId="1" SourceUrl="http://localhost:54096/WsGuiaDespacho.svc?xsd=xsd1" />
+    <MetadataFile FileName="WsGuiaDespacho1.xsd" MetadataType="Schema" ID="23a2373c-38aa-45d8-b315-eaf899dde984" SourceId="1" SourceUrl="http://localhost:54096/WsGuiaDespacho.svc?xsd=xsd2" />
+    <MetadataFile FileName="WsGuiaDespacho.wsdl" MetadataType="Wsdl" ID="95dcba76-4363-421b-9fba-4ef988a9d1b5" SourceId="1" SourceUrl="http://localhost:54096/WsGuiaDespacho.svc?wsdl" />
+    <MetadataFile FileName="WsGuiaDespacho.disco" MetadataType="Disco" ID="7a7c7747-97e8-458e-b10a-e456c91332e9" SourceId="1" SourceUrl="http://localhost:54096/WsGuiaDespacho.svc?disco" />
+    <MetadataFile FileName="WsGuiaDespacho2.xsd" MetadataType="Schema" ID="6c700b1e-35fd-4e47-bafa-b8d096a70ec7" SourceId="1" SourceUrl="http://localhost:54096/WsGuiaDespacho.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
